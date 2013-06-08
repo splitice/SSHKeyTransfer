@@ -1,0 +1,14 @@
+C:\Users\SplitIce\Documents\Visual Studio 2010\Projects\SSHKeyTransfer\SSHKeyTransfer\obj\x86\Release\Interop.IWshRuntimeLibrary.dll
+C:\Users\SplitIce\Documents\Visual Studio 2010\Projects\SSHKeyTransfer\SSHKeyTransfer\obj\x86\Release\SSHKeyTransfer.csproj.ResolveComReference.cache
+C:\Users\SplitIce\Documents\Visual Studio 2010\Projects\SSHKeyTransfer\SSHKeyTransfer\bin\Release\SSHKeyTransfer.exe
+C:\Users\SplitIce\Documents\Visual Studio 2010\Projects\SSHKeyTransfer\SSHKeyTransfer\bin\Release\SSHKeyTransfer.pdb
+C:\Users\SplitIce\Documents\Visual Studio 2010\Projects\SSHKeyTransfer\SSHKeyTransfer\bin\Release\Renci.SshNet.dll
+C:\Users\SplitIce\Documents\Visual Studio 2010\Projects\SSHKeyTransfer\SSHKeyTransfer\bin\Release\Renci.SshNet.pdb
+C:\Users\SplitIce\Documents\Visual Studio 2010\Projects\SSHKeyTransfer\SSHKeyTransfer\bin\Release\Renci.SshNet.xml
+C:\Users\SplitIce\Documents\Visual Studio 2010\Projects\SSHKeyTransfer\SSHKeyTransfer\obj\x86\Release\ResolveAssemblyReference.cache
+C:\Users\SplitIce\Documents\Visual Studio 2010\Projects\SSHKeyTransfer\SSHKeyTransfer\obj\x86\Release\SSHKeyTransfer.Form1.resources
+C:\Users\SplitIce\Documents\Visual Studio 2010\Projects\SSHKeyTransfer\SSHKeyTransfer\obj\x86\Release\SSHKeyTransfer.Properties.Resources.resources
+C:\Users\SplitIce\Documents\Visual Studio 2010\Projects\SSHKeyTransfer\SSHKeyTransfer\obj\x86\Release\GenerateResource.read.1.tlog
+C:\Users\SplitIce\Documents\Visual Studio 2010\Projects\SSHKeyTransfer\SSHKeyTransfer\obj\x86\Release\GenerateResource.write.1.tlog
+C:\Users\SplitIce\Documents\Visual Studio 2010\Projects\SSHKeyTransfer\SSHKeyTransfer\obj\x86\Release\SSHKeyTransfer.exe
+C:\Users\SplitIce\Documents\Visual Studio 2010\Projects\SSHKeyTransfer\SSHKeyTransfer\obj\x86\Release\SSHKeyTransfer.pdb

@@ -1,0 +1,10 @@
+C:\Users\SplitIce\Dropbox\Projects\DVPlus\ReverseClient\Renci.SshNet\bin\Debug\Renci.SshNet.dll
+C:\Users\SplitIce\Dropbox\Projects\DVPlus\ReverseClient\Renci.SshNet\bin\Debug\Renci.SshNet.pdb
+C:\Users\SplitIce\Dropbox\Projects\DVPlus\ReverseClient\Renci.SshNet\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\SplitIce\Dropbox\Projects\DVPlus\ReverseClient\Renci.SshNet\obj\Debug\Renci.SshNet.dll
+C:\Users\SplitIce\Dropbox\Projects\DVPlus\ReverseClient\Renci.SshNet\obj\Debug\Renci.SshNet.pdb
+C:\Users\SplitIce\Documents\Visual Studio 2010\Projects\SSHKeyTransfer\Renci.SshNet\bin\Debug\Renci.SshNet.dll
+C:\Users\SplitIce\Documents\Visual Studio 2010\Projects\SSHKeyTransfer\Renci.SshNet\bin\Debug\Renci.SshNet.pdb
+C:\Users\SplitIce\Documents\Visual Studio 2010\Projects\SSHKeyTransfer\Renci.SshNet\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\SplitIce\Documents\Visual Studio 2010\Projects\SSHKeyTransfer\Renci.SshNet\obj\Debug\Renci.SshNet.dll
+C:\Users\SplitIce\Documents\Visual Studio 2010\Projects\SSHKeyTransfer\Renci.SshNet\obj\Debug\Renci.SshNet.pdb

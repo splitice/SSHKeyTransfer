@@ -1,0 +1,4 @@
+<Modules>
+  <Module PersistentId="768C9F4F-955E-423D-BE78-D935D4F64EC0" ModuleId="SSHKeyTransfer" />
+  <Module PersistentId="2F5F8C90-0BD1-424F-997C-7BC6280919D1" ModuleId="Renci.SshNet" />
+</Modules>
