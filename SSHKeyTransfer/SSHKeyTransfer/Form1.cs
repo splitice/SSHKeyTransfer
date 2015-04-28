@@ -80,7 +80,7 @@ namespace SSHKeyTransfer
                         buffer[3] == (byte) '-' && buffer[4] == (byte) 'r' && buffer[5] == (byte) 's' &&
                         buffer[6] == (byte) 'a')
                     {
-                        strKey = Encoding.ASCII.GetString(buffer).TrimEnd();
+                        strKey = Encoding.ASCII.GetString(buffer, 0, length).Trim();
                     }
                     else
                     {
@@ -92,7 +92,7 @@ namespace SSHKeyTransfer
                     StreamReader reader = new StreamReader(stream);
 
                     //Check for key that might already exist
-                    while (reader.EndOfStream)
+                    while (!reader.EndOfStream)
                     {
                         var line = reader.ReadLine().Trim();
                         if (line == strKey)
