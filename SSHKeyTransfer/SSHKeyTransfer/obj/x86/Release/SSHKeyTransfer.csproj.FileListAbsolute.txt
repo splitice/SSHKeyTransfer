@@ -12,3 +12,17 @@ C:\Users\SplitIce\Documents\Visual Studio 2010\Projects\SSHKeyTransfer\SSHKeyTra
 C:\Users\SplitIce\Documents\Visual Studio 2010\Projects\SSHKeyTransfer\SSHKeyTransfer\obj\x86\Release\GenerateResource.write.1.tlog
 C:\Users\SplitIce\Documents\Visual Studio 2010\Projects\SSHKeyTransfer\SSHKeyTransfer\obj\x86\Release\SSHKeyTransfer.exe
 C:\Users\SplitIce\Documents\Visual Studio 2010\Projects\SSHKeyTransfer\SSHKeyTransfer\obj\x86\Release\SSHKeyTransfer.pdb
+C:\Users\splitice\Documents\GitHub\SSHKeyTransfer\SSHKeyTransfer\SSHKeyTransfer\obj\x86\Release\Interop.IWshRuntimeLibrary.dll
+C:\Users\splitice\Documents\GitHub\SSHKeyTransfer\SSHKeyTransfer\SSHKeyTransfer\obj\x86\Release\SSHKeyTransfer.csproj.ResolveComReference.cache
+C:\Users\splitice\Documents\GitHub\SSHKeyTransfer\SSHKeyTransfer\SSHKeyTransfer\obj\x86\Release\SSHKeyTransfer.exe
+C:\Users\splitice\Documents\GitHub\SSHKeyTransfer\SSHKeyTransfer\SSHKeyTransfer\obj\x86\Release\SSHKeyTransfer.pdb
+C:\Users\splitice\Documents\GitHub\SSHKeyTransfer\SSHKeyTransfer\SSHKeyTransfer\bin\Release\SSHKeyTransfer.exe.config
+C:\Users\splitice\Documents\GitHub\SSHKeyTransfer\SSHKeyTransfer\SSHKeyTransfer\bin\Release\SSHKeyTransfer.exe
+C:\Users\splitice\Documents\GitHub\SSHKeyTransfer\SSHKeyTransfer\SSHKeyTransfer\bin\Release\SSHKeyTransfer.pdb
+C:\Users\splitice\Documents\GitHub\SSHKeyTransfer\SSHKeyTransfer\SSHKeyTransfer\bin\Release\Renci.SshNet.dll
+C:\Users\splitice\Documents\GitHub\SSHKeyTransfer\SSHKeyTransfer\SSHKeyTransfer\bin\Release\Renci.SshNet.pdb
+C:\Users\splitice\Documents\GitHub\SSHKeyTransfer\SSHKeyTransfer\SSHKeyTransfer\bin\Release\Renci.SshNet.xml
+C:\Users\splitice\Documents\GitHub\SSHKeyTransfer\SSHKeyTransfer\SSHKeyTransfer\obj\x86\Release\SSHKeyTransfer.csprojResolveAssemblyReference.cache
+C:\Users\splitice\Documents\GitHub\SSHKeyTransfer\SSHKeyTransfer\SSHKeyTransfer\obj\x86\Release\SSHKeyTransfer.Form1.resources
+C:\Users\splitice\Documents\GitHub\SSHKeyTransfer\SSHKeyTransfer\SSHKeyTransfer\obj\x86\Release\SSHKeyTransfer.Properties.Resources.resources
+C:\Users\splitice\Documents\GitHub\SSHKeyTransfer\SSHKeyTransfer\SSHKeyTransfer\obj\x86\Release\SSHKeyTransfer.csproj.GenerateResource.Cache

@@ -8,3 +8,9 @@ C:\Users\SplitIce\Documents\Visual Studio 2010\Projects\SSHKeyTransfer\Renci.Ssh
 C:\Users\SplitIce\Documents\Visual Studio 2010\Projects\SSHKeyTransfer\Renci.SshNet\obj\Release\ResolveAssemblyReference.cache
 C:\Users\SplitIce\Documents\Visual Studio 2010\Projects\SSHKeyTransfer\Renci.SshNet\obj\Release\Renci.SshNet.dll
 C:\Users\SplitIce\Documents\Visual Studio 2010\Projects\SSHKeyTransfer\Renci.SshNet\obj\Release\Renci.SshNet.pdb
+C:\Users\splitice\Documents\GitHub\SSHKeyTransfer\SSHKeyTransfer\Renci.SshNet\bin\Release\Renci.SshNet.xml
+C:\Users\splitice\Documents\GitHub\SSHKeyTransfer\SSHKeyTransfer\Renci.SshNet\bin\Release\Renci.SshNet.dll
+C:\Users\splitice\Documents\GitHub\SSHKeyTransfer\SSHKeyTransfer\Renci.SshNet\bin\Release\Renci.SshNet.pdb
+C:\Users\splitice\Documents\GitHub\SSHKeyTransfer\SSHKeyTransfer\Renci.SshNet\obj\Release\Renci.SshNet.csprojResolveAssemblyReference.cache
+C:\Users\splitice\Documents\GitHub\SSHKeyTransfer\SSHKeyTransfer\Renci.SshNet\obj\Release\Renci.SshNet.dll
+C:\Users\splitice\Documents\GitHub\SSHKeyTransfer\SSHKeyTransfer\Renci.SshNet\obj\Release\Renci.SshNet.pdb

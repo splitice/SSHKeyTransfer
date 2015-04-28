@@ -5,10 +5,12 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 using System.IO;
 using Renci.SshNet;
 using System.Text.RegularExpressions;
+using SSHKeyTransfer.Properties;
 
 namespace SSHKeyTransfer
 {
@@ -19,86 +21,130 @@ namespace SSHKeyTransfer
             InitializeComponent();
         }
 
-        private void execute()
+        private void Execute()
         {
-            try
+            var keyPath = textBoxFile.Text;
+            var host = textBoxHost.Text;
+            var user = textBoxUser.Text;
+            var pass = textBoxPass.Text;
+
+            Action _execute = () =>
             {
-                //Read Key
-                Status("opening key");
-                FileStream file = File.OpenRead(textBoxFile.Text);
-
-                //Connect to SFTP
-                Status("sftp connecting");
-                SftpClient sftp = new SftpClient(textBoxHost.Text, textBoxUser.Text, textBoxPass.Text);
-                sftp.Connect();
-
-                //Find authorized keys
-                string auth_keys = "/" + textBoxUser.Text + "/.ssh/authorized_keys";
-                if (!sftp.Exists(auth_keys))
+                try
                 {
-                    Status("creating");
-                    if (!sftp.Exists("/" + textBoxUser.Text + "/.ssh"))
-                        sftp.CreateDirectory("/" + textBoxUser.Text + "/.ssh");
-                    sftp.Create(auth_keys);
+                    //Read Key
+                    Status("opening key");
+                    FileStream file = File.OpenRead(keyPath);
 
+                    //Connect to SFTP
+                    Status("sftp connecting");
+                    SftpClient sftp = new SftpClient(host, user, pass);
+                    sftp.Connect();
+
+                    //users home directory
+                    string homepath = "/home/" + user + "/";
+                    if (user == "root")
+                    {
+                        homepath = "/root/";
+                    }
+
+                    //Find authorized keys
+                    string authKeys = homepath + ".ssh/authorized_keys";
+                    if (!sftp.Exists(authKeys))
+                    {
+                        Status("creating");
+                        if (!sftp.Exists(homepath + ".ssh"))
+                            sftp.CreateDirectory(homepath + ".ssh");
+                        sftp.Create(authKeys);
+                    }
+
+                    //Download
+                    Status("downloading");
+                    Stream stream = new MemoryStream();
+                    sftp.DownloadFile(authKeys, stream);
+                    Status("downloaded");
+
+                    //Read
+                    byte[] buffer = new byte[10240]; //No key should be this large
+                    int length = file.Read(buffer, 0, buffer.Length);
+
+                    //Validate
+                    String strKey;
+                    if (length < 20)
+                    {
+                        Status("Invalid Key (Length)");
+                        return;
+                    }
+                    if (buffer[0] == (byte) 's' && buffer[1] == (byte) 's' && buffer[2] == (byte) 'h' &&
+                        buffer[3] == (byte) '-' && buffer[4] == (byte) 'r' && buffer[5] == (byte) 's' &&
+                        buffer[6] == (byte) 'a')
+                    {
+                        strKey = Encoding.ASCII.GetString(buffer).TrimEnd();
+                    }
+                    else
+                    {
+                        Status("Invalid Key (Format)");
+                        return;
+                    }
+
+                    stream.Seek(0, SeekOrigin.Begin);
+                    StreamReader reader = new StreamReader(stream);
+
+                    //Check for key that might already exist
+                    while (reader.EndOfStream)
+                    {
+                        var line = reader.ReadLine().Trim();
+                        if (line == strKey)
+                        {
+                            Status("key already exists");
+                            return;
+                        }
+                    }
+
+                    //Check new line
+                    if (stream.Length != 0)
+                    {
+                        stream.Seek(0, SeekOrigin.End);
+                        stream.WriteByte((byte) '\n');
+                    }
+                    else
+                    {
+                        stream.Seek(0, SeekOrigin.End);
+                    }
+
+                    //Append
+                    Status("appending");
+                    stream.Write(buffer, 0, length);
+
+                    //Upload
+                    Status("uploading");
+                    stream.Seek(0, SeekOrigin.Begin);
+                    sftp.UploadFile(stream, authKeys);
+                    Status("done");
+
+                    Settings.Default.KeyPath = textBoxFile.Text;
                 }
-
-                //Download
-                Status("downloading");
-                Stream stream = new MemoryStream();
-                sftp.DownloadFile(auth_keys, stream);
-                Status("downloaded");
-
-                //Read
-                byte[] buffer = new byte[10240];//No key should be this large
-                int length = file.Read(buffer, 0, buffer.Length);
-
-                //Validate
-                if (length < 20)
+                catch (Exception ex)
                 {
-                    Status("Invalid Key (Length)");
-                    return;
+                    MessageBox.Show(ex.Message);
                 }
-                if (buffer[0] == (byte)'s' && buffer[1] == (byte)'s' && buffer[2] == (byte)'h' && buffer[3] == (byte)'-' && buffer[4] == (byte)'r' && buffer[5] == (byte)'s' && buffer[6] == (byte)'a')
-                {
+            };
 
-                }
-                else
-                {
-                    Status("Invalid Key (Format)");
-                    return;
-                }
-
-                //Check new line
-                if (stream.Length != 0)
-                {
-                    stream.WriteByte((byte)'\n');
-                }
-
-                //Append
-                Status("appending");
-                stream.Write(buffer, 0, length);
-
-                //Upload
-                Status("uploading");
-                stream.Seek(0, SeekOrigin.Begin);
-                sftp.UploadFile(stream, auth_keys);
-                Status("done");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            Thread thread = new Thread(new ThreadStart(_execute));
+            thread.Start();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            execute();
+            Execute();
         }
 
         private void Status(string text)
         {
-            label3.Text = text;
+            Invoke(new Action(() =>
+            {
+                label3.Text = text;
+            }));
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -128,7 +174,7 @@ namespace SSHKeyTransfer
                         Match m = Regex.Match(s, "([a-z]+)@([a-z0-9\\.]+)");
                         textBoxUser.Text = m.Groups[1].Value;
                         textBoxHost.Text = m.Groups[2].Value;
-                        execute();
+                        Execute();
                     }
                 }
                 catch (Exception ex)
