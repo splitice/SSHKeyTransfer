@@ -19,6 +19,7 @@ namespace SSHKeyTransfer
         public Form1()
         {
             InitializeComponent();
+            textBoxFile.Text = Settings.Default.KeyPath;
         }
 
         private void Execute()
@@ -122,7 +123,9 @@ namespace SSHKeyTransfer
                     sftp.UploadFile(stream, authKeys);
                     Status("done");
 
+                    //Save key path
                     Settings.Default.KeyPath = textBoxFile.Text;
+                    Settings.Default.Save();
                 }
                 catch (Exception ex)
                 {
